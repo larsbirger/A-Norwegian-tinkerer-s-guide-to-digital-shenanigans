@@ -1,3 +1,5 @@
-# A Norwegian tinkerer's guide to digital shenanigans
+# A Norwegian Tinker's Guide to Digital Shenanigans
 
-A Norwegian tinkerer's guide to digital shenanigans is an attempt to note down different tips and tricks i have encountered in my travels across the interweb searching to a simple way to do the all of the things tech
+A Norwegian tinker's guide to digital shenanigans is an attempt to note down different tips and tricks I've encountered in my travels across the interweb, searching for simple ways to do all sorts of technical things.
+
+**Note:** Most of the examples and tips in this guide are based on the Debian operating system, which I prefer for its simplicity and flexibility.

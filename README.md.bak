@@ -1,0 +1,55 @@
+# A Norwegian Tinker's Guide to Digital Shenanigans
+
+A Norwegian tinker's guide to digital shenanigans is an attempt to note down different tips and tricks I've encountered in my travels across the interweb, searching for simple ways to do all sorts of technical things.
+
+## Setting Up a Static IP Address
+
+**Understanding Static IP Addresses**
+
+A static IP address is a fixed IP address assigned to a device on a network. Unlike dynamic IP addresses, which change over time, static IP addresses remain constant. This can be useful for devices that need to be accessed remotely or for devices that require consistent network settings.
+
+**Setting Up a Static IP Address on Linux:**
+
+1. **Edit the Network Interface Configuration File:**
+   - Open the network interface configuration file, usually located at `/etc/network/interfaces`.
+   - You can also edit files in the `/etc/network/interfaces.d/` directory for specific interfaces.
+
+2. **Configure the Interface:**
+   - Add the following lines to configure the interface with a static IP address:
+
+   ```
+   auto eth0  # Replace eth0 with your interface name
+   iface eth0 inet static
+       address 192.168.1.100  # Replace with your desired IP address
+       netmask 255.255.255.0  # Replace with the appropriate subnet mask
+       gateway 192.168.1.1    # Replace with your default gateway IP address
+   ```
+
+3. **Apply the Configuration:**
+   - Restart the networking service:
+     ```bash
+     sudo systemctl restart networking
+     ```
+   - Or, apply the configuration immediately to the specific interface:
+     ```bash
+     sudo ifup eth0
+     ```
+
+**Setting Up a DHCP Client:**
+
+To obtain an IP address automatically from a DHCP server, you can use the `dhcp` configuration:
+
+```
+auto eth0
+iface eth0 inet dhcp
+```
+
+This configuration will make the system request an IP address, subnet mask, and default gateway from the DHCP server.
+
+**Remember:**
+
+- **Consult your network administrator** for specific instructions and guidance tailored to your network environment.
+- **Be cautious when editing network configuration files.** Incorrect settings can prevent your system from connecting to the network.
+- **Back up your configuration files** before making any changes.
+
+By following these steps and considering the precautions, you can effectively configure static IP addresses and DHCP clients on your Linux system.
