@@ -2,6 +2,10 @@
 
 based on [this page](https://www.xmodulo.com/switch-from-networkmanager-to-systemd-networkd.html)
 
+- **Note:** networkd does not have a Gui as of 23.12.2024.
+    if you use the Gui as your personal computer,
+    it is not recommended to use networkd unless it can give you this functionality.
+
 To configure network devices with systemd-networkd, you must specify configuration information in text files with **.network** extension.
 
 These network configuration files are then stored and loaded from `/etc/systemd/network`.
